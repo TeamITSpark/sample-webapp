@@ -20,6 +20,7 @@
     <artifactId>javax.mail-api</artifactId>
     <version>1.6.2</version>
 </dependency>
+  </dependencies>
 <!--  <build>
     <finalName>Test-WebApp</finalName>
   </build> -->
