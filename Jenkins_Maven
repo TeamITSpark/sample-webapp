@@ -1,0 +1,33 @@
+pipeline {
+   agent any
+
+   stages {
+      stage('Build') {
+         steps {
+            // Get some code from a GitHub repository
+            git 'https://github.com/mahesh3267/sample-webapp.git'
+
+            // Execute Gradle build.
+            sh "mvn clean package"
+
+
+         }
+
+         post {
+            success {
+               archiveArtifacts 'target/*.war'
+            }
+         }
+      }
+      stage('build_docker_image') {
+        steps {
+                        sh "docker build -t mahesh3267/sample-webapp:$BUILD_NUMBER ."
+                }
+      }
+          stage('push_docker_image') {
+        steps {
+                        sh "docker push mahesh3267/sample-webapp:$BUILD_NUMBER"
+                }
+      }
+   }
+}
