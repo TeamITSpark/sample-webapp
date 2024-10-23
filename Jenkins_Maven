@@ -10,7 +10,7 @@ pipeline {
             git 'https://github.com/mahesh3267/sample-webapp.git'
 
             // Execute Gradle build.
-            sh "mvn clean package"
+            sh "/opt/maven/bin/mvn clean package"
 
 
          }
