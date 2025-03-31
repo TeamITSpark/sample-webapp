@@ -1,5 +1,5 @@
 <html>
-<body bgcolor="yellow">
+<body bgcolor="blue">
 <h2>Learning Java WebAPP with Junit's</h2>
 <h2>thirdline</h2>
 <h2>thirdline</h2>
