@@ -5,7 +5,10 @@ services:
       context: .
       dockerfile: Dockerfile_Maven
     image: local_build
+    read_only: false
     container_name: sample-webapp2
+    security_opt:
+      - no-new-privileges:true
     ports:
      - 8089:8080
      # Learning@123
