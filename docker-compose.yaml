@@ -5,9 +5,12 @@ services:
       context: .
       dockerfile: Dockerfile_Maven
     image: local_build
+    read_only: false
     container_name: sample-webapp2
     ports:
-     - 8089:8080
+      - 8089:8080
+    security_opt:
+      - no-new-privileges:true
      # Learning@123
     #volumes:
     # - /data/artifactory:/var/opt/jfrog/artifactory
